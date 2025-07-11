@@ -1,7 +1,7 @@
 name: element_key_inspector
 description: "A Flutter package that allows you to visually inspect and highlight widgets by their keys in your app. Ideal for test automation workflows."
 version: 0.0.1
-homepage:
+homepage: https://github.com/buyandship/element_key_inspector
 
 environment:
   sdk: ^3.5.0
