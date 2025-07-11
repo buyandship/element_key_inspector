@@ -1,0 +1,22 @@
+name: element_key_inspector_example
+description: Example project for element_key_inspector package.
+publish_to: none
+
+environment:
+  sdk: ^3.5.0
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  element_key_inspector:
+    path: ../
+  font_awesome_flutter: ^10.8.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true 
