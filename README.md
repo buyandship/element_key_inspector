@@ -31,6 +31,8 @@ import 'package:element_key_inspector/element_key_inspector.dart';
 
 ### Initialize Inspector
 
+You can initialize the Inspector in the app's initState method.
+
 ```dart
 ElementKeyInspector.initialize(
     scopes: [ 
@@ -61,7 +63,9 @@ ElementKeyInspectorStack(
 
 ## Additional information
 
-### Get all the element key positions
+### Get all the positions of element keys 
+
+You can integrate `getElementKeyPositions` function with your custom UI if needed.
 
 ```dart
 final elementKeyPositions = ElementKeyInspector.getElementKeyPositions();
