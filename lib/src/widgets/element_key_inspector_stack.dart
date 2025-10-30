@@ -47,7 +47,7 @@ class _ElementKeyInspectorStackState extends State<ElementKeyInspectorStack> {
     return Theme(
       data: ThemeData(
         floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: Colors.black.withOpacity(0.5),
+          backgroundColor: Colors.black.withValues(alpha: 0.5),
           foregroundColor: Colors.white,
         ),
       ),

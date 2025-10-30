@@ -85,7 +85,7 @@ class _InspectorOverlayState extends State<InspectorOverlay> {
                         decoration: BoxDecoration(
                           border: Border.all(color: colors[index % colors.length], width: 3),
                           borderRadius: const BorderRadius.all(Radius.circular(12)),
-                          color: selectedIndex == index ? colors[index % colors.length].withOpacity(0.3) : Colors.transparent,
+                          color: selectedIndex == index ? colors[index % colors.length].withValues(alpha: 0.3) : Colors.transparent,
                         ),
                         child: Text(
                           entry.key,
@@ -115,7 +115,7 @@ class _InspectorOverlayState extends State<InspectorOverlay> {
           child: GestureDetector(
             onTap: widget.onClose,
             child: Container(
-              color: Colors.black.withOpacity(0.2),
+              color: Colors.black.withValues(alpha: 0.2),
             ),
           ),
         ),
@@ -141,7 +141,7 @@ class _InspectorOverlayState extends State<InspectorOverlay> {
                         width: rect.width,
                         height: rect.height,
                         decoration: BoxDecoration(
-                          color: color.withOpacity(0.5),
+                          color: color.withValues(alpha: 0.5),
                           border: Border.all(
                             color: color,
                             width: 4,
@@ -160,14 +160,14 @@ class _InspectorOverlayState extends State<InspectorOverlay> {
         Positioned.fill(
           top: screenHeight - sectionHeight,
           child: Material(
-            color: Colors.black.withOpacity(0.5),
+            color: Colors.black.withValues(alpha: 0.5),
             child: Column(
               children: [
                 GestureDetector(
                   onTap: togglePanel,
                   child: Container(
                     height: 32,
-                    color: Colors.white.withOpacity(0.1),
+                    color: Colors.white.withValues(alpha: 0.1),
                     alignment: Alignment.center,
                     child: IconButton(
                       icon: FaIcon(isExpanded ? FontAwesomeIcons.chevronUp : FontAwesomeIcons.chevronDown, color: Colors.white, size: 20),
