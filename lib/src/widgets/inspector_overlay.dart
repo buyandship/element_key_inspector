@@ -83,13 +83,21 @@ class _InspectorOverlayState extends State<InspectorOverlay> {
                         padding: const EdgeInsets.all(8),
                         margin: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
-                          border: Border.all(color: colors[index % colors.length], width: 3),
-                          borderRadius: const BorderRadius.all(Radius.circular(12)),
-                          color: selectedIndex == index ? colors[index % colors.length].withValues(alpha: 0.3) : Colors.transparent,
+                          border: Border.all(
+                              color: colors[index % colors.length], width: 3),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(12)),
+                          color: selectedIndex == index
+                              ? colors[index % colors.length]
+                                  .withValues(alpha: 0.3)
+                              : Colors.transparent,
                         ),
                         child: Text(
                           entry.key,
-                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+                          style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
                         ),
                       ),
                       onTap: () {
@@ -170,12 +178,19 @@ class _InspectorOverlayState extends State<InspectorOverlay> {
                     color: Colors.white.withValues(alpha: 0.1),
                     alignment: Alignment.center,
                     child: IconButton(
-                      icon: FaIcon(isExpanded ? FontAwesomeIcons.chevronUp : FontAwesomeIcons.chevronDown, color: Colors.white, size: 20),
+                      icon: FaIcon(
+                          isExpanded
+                              ? FontAwesomeIcons.chevronUp
+                              : FontAwesomeIcons.chevronDown,
+                          color: Colors.white,
+                          size: 20),
                       onPressed: togglePanel,
                     ),
                   ),
                 ),
-                if (isExpanded) _buildElementKeyButtons(widgetPositions: widget.widgetPositions),
+                if (isExpanded)
+                  _buildElementKeyButtons(
+                      widgetPositions: widget.widgetPositions),
               ],
             ),
           ),

@@ -7,12 +7,34 @@ import '../screen.dart';
 
 import 'inspector_overlay.dart';
 
+/// A widget that wraps your app content and provides an inspector overlay
+/// for visualizing element keys in the widget tree.
+///
+/// This widget displays your app normally and optionally shows a floating
+/// action button that toggles an overlay displaying all element keys found
+/// within the initialized [ElementKeyScope]s.
+///
+/// Example:
+/// ```dart
+/// ElementKeyInspectorStack(
+///   isShowInspectButton: true,
+///   child: MyApp(),
+/// )
+/// ```
 class ElementKeyInspectorStack extends StatefulWidget {
+  /// The child widget to wrap (typically your app's root widget).
   final Widget child;
+
+  /// Whether to show the floating inspect button.
   final bool isShowInspectButton;
+
+  /// Optional custom inspect button widget to use instead of the default.
   final Widget? inspectButton;
+
+  /// Optional initial position for the inspect button.
   final Offset? inspectButtonPosition;
 
+  /// Creates an [ElementKeyInspectorStack].
   const ElementKeyInspectorStack({
     super.key,
     required this.child,
@@ -22,7 +44,8 @@ class ElementKeyInspectorStack extends StatefulWidget {
   });
 
   @override
-  State<ElementKeyInspectorStack> createState() => _ElementKeyInspectorStackState();
+  State<ElementKeyInspectorStack> createState() =>
+      _ElementKeyInspectorStackState();
 }
 
 class _ElementKeyInspectorStackState extends State<ElementKeyInspectorStack> {
@@ -34,7 +57,8 @@ class _ElementKeyInspectorStackState extends State<ElementKeyInspectorStack> {
   @override
   void initState() {
     super.initState();
-    buttonPositionNotifier = ValueNotifier(widget.inspectButtonPosition ?? Offset(screenWidth - 68, screenHeight * 0.6));
+    buttonPositionNotifier = ValueNotifier(widget.inspectButtonPosition ??
+        Offset(screenWidth - 68, screenHeight * 0.6));
   }
 
   @override
